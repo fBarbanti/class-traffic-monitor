@@ -1,0 +1,3 @@
+v1
+{"path":"file:///home/francesco/Documenti/Tirocinio/prima_e_terza_fase/Tirocinio%20Class/tirocinio-class/sink/sink_stream_modified/part-00000-35b22f72-882a-4a3f-a44b-e91ff90ff748-c000.snappy.parquet","size":795,"isDir":false,"modificationTime":1594454023911,"blockReplication":1,"blockSize":33554432,"action":"add"}
+{"path":"file:///home/francesco/Documenti/Tirocinio/prima_e_terza_fase/Tirocinio%20Class/tirocinio-class/sink/sink_stream_modified/part-00171-37f3d987-960d-4efc-af02-7d70eb23b079-c000.snappy.parquet","size":1900,"isDir":false,"modificationTime":1594454026147,"blockReplication":1,"blockSize":33554432,"action":"add"}
