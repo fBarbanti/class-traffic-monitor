@@ -1,37 +1,32 @@
 # class-traffic-monitor
 
-```class-traffic-monitor``` dspds
-L’obbiettivo di questa fase è quello di implementare un modulo per la visualizzazione degli aggregati ottenuti nelle fasi precedenti. Infatti, si vuole dare all’utente la possibilità di monitorare il traffico ai vari aggregati temporali, con la possibilità di differenziare il traffico in base al tipo di veicolo. Ad oggi non viene mostrata la velocità media in quanto sempre nulla, ma in futuro si può pensare di visualizzarla dato che questa informazione è presente nei dati aggregati.
+```class-traffic-monitor``` implements a module to view road traffic in the MASA area detected by smart cameras.
+
+The goal is to provide the user with the ability to monitor traffic at various time aggregates, with the ability to differentiate traffic based on the type of vehicle. The aggregate data used in this phase were previously calculated using the software present in the following repository: https://github.com/fBarbanti/class-real-time-aggregator.git
+
+In particular, the interactive map has the task of showing traffic on the basis of a palette composed of the following colors: green, orange and red.
+The traffic evaluation criterion, that is the rule that determines when it is flowing or heavy, derives directly from the traffic flows made available by the Regione Emilia Romagna. It has been noted how, up to a transit of 8000 vehicles per day, the region evaluates the traffic as smooth, from 8000 to 18,000 slowdowns and from 18,000 onwards heavy traffic. For this reason, if the density of vehicles in each road section is:
+
+- < 6 traffic is flowing and the corresponding color is green
+-  \>=6 and < 13 the traffic is flowing with some slowdown and the corresponding color is orange
+- \>= 13 traffic is heavy and the corresponding color is red 
 
 ## Dependencies
-
-Gli strumenti utilizzati sono:
 - Jupyter Notebook
+- ipywidgets
+- matplotlib
 - Python 3
 - Folium 
-- PySpark
 - Numpy
+- pandas
+- findspark
+- PySpark
+- Apache Spark (version 2.4.5)
 
-## Usage
 
-```bash
-mkdir "directory_name"
-cd "directory_name"
-git init 
-git clone https://gitlab.com/francesco-barbanti/visualizzatore.git
+## Use
+
+```
 jupyter notebook Done.ipynb
 ```
-La prima cella mostra tutti i dati aggregati al minuto presenti nel dataset.\
-La seconda cella mostra il traffico in base alla granularità, l'orario, il giorno e il tipo di veicolo scelto. 
-Si può notare come scegliendo come data il 10 Luglio 2020 alle 18:10 e come oggetto le macchine, il traffico è sempre scorrevole:\
-<img src="Images/2020-07-10-1800.png" width="700" >\
-Mentre alle 18:11 nel tratto numero 20 di Strada Nazionale Canaletto Sud un traffico intenso (i dati sono stati generati casualmente).\
-<img src="Images/2020-07-10-1811.png" width="700" >
-
-I colori dei vari tratti sono stati scelti in base alla densità di oggetti presenti in un determinato tratto. In particolare, se la densità di oggetti è:
-- < 30 il traffico è scorrevole (Verde)
-- \>= 30 e <= 50 il traffico è scorrevole con qualche rallentamento (Arancione)
-- \> 50 il traffico è intenso (Rosso) 
-
-
-
+A test aggregate data set has been loaded into the sink directory, which is the reason why the interactive map always shows green.
