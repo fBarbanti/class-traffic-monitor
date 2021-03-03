@@ -1,5 +1,6 @@
-# Tirocinio CLASS - Visualizzatore del traffico
+# class-traffic-monitor
 
+```class-traffic-monitor``` dspds
 L’obbiettivo di questa fase è quello di implementare un modulo per la visualizzazione degli aggregati ottenuti nelle fasi precedenti. Infatti, si vuole dare all’utente la possibilità di monitorare il traffico ai vari aggregati temporali, con la possibilità di differenziare il traffico in base al tipo di veicolo. Ad oggi non viene mostrata la velocità media in quanto sempre nulla, ma in futuro si può pensare di visualizzarla dato che questa informazione è presente nei dati aggregati.
 
 ## Dependencies
